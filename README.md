@@ -2,7 +2,7 @@
 
 Welcome to my C++ learning repository 🚀
 
-This repository documents my journey as I learn and practice in hopes of mastering (hopefully) C++. Here you'll find my notes, small projects and exercises that reflect my progress. 
+This repository documents my journey as I learn and practice in hopes of mastering (hopefully) C++. Here you'll find my notes, small projects and exercises that reflect my progress. My reference book will be Tony Gaddis's *Starting Out with C++ from Control Structures and Objects* (8th ed.)
 
 Date & time of opening repository : 14/8/2024, 9:26pm
 
