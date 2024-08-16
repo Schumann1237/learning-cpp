@@ -140,5 +140,50 @@ int main ()
     return 0;
 } 
 ~~~
-#### Key Words (Reserved Words)
-Three of C++'s key words appe
+##### Key Words (Reserved Words)
+Three of C++'s key words appear on lines 3 and 5: *using, namepsace,* and *int*. The word double, which appears on line 7, is also a C++ key word. Key words in C++ are always in lowercase. Key words are reserved and cannot be used for anything other than their designated purposes.
+
+##### Programmer-Defined Identifiers
+The words *hours, rate,* and *pay* that appear in the program on lines 7, 11, 15, 18, and 21 are programmer-defined identifiers. They are not part of the C++ language but rather are names made up by the programmer. In this particular program, these are the names of variables.
+
+##### Operators
+On line 18 the following code appears:
+~~~
+pay = hours * rate;
+~~~
+The = and * symbols are both operators. They perform operations on pieces of data known as operands. The * operator multiplies its two operands, which in this example are the variables *hours* and *rate*.
+
+##### Punctuation
+Notice that lines 3, 7, 10, 11, 14, 15, 18, 21, and 22 all end with a semicolon. A semicolon in C++ is similar to a period in English. Part of larning C++ is learning where to place semicolons and other punctuation symbols.
+
+#### Lines and Statements
+The contents of a program are thought of in terms of lines and statements.. A "line" is just a single line as it appears in the body of a program. 
+
+A statement is a complete instruction that causes the computer to perform some action.
+
+#### Variables
+A variable is a named storage location in the computer's memory for holding a piece of information. 
+
+Variables are symbolic names that represent locations in the computer's random-access memory (RAM). When information is stored in a variable, it is actually stored in RAM. 
+
+#### Variable Definitions
+In programming, there are two general types of data: numbers and characters. 
+
+Numeric data can be categorised even further. For instance, the following are all whole numbers, or integers:
+~~~
+5
+7
+-129
+32154
+~~~
+The following are real, or floating-point numbers:
+~~~ 
+3.14159
+6.7
+1.0002
+~~~
+At line 7 of the program:
+~~~
+double hours, rate, pay;
+~~~
+The word double in this statement indicates that the variables *hours, rate,* and *pay* will be used to hold double precision floating-point numbers. This statement is called a *variable definition*.
