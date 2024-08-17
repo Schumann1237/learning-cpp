@@ -278,5 +278,22 @@ When a variable's contents change, or information is displayed on the screen, th
 ##### Validate the results of the program.
 When you believe you have corrected all the run-time errors, enter test data and determine whether the program solves the original problem.
 
+#### What is Software Engineering?
+The field encompasses the whole process of crafting computer software. Software engineers use a number of tools in their craft. Examples:
+- Program specifications
+- Charts and diagrams of screen output
+- Hierarchy charts and flowcharts
+- Pseudocode
+- Examples of expected input and desired output
+- Special software designed for testing programs
+  
+In step 3 of the programming process, hierarchy charts were introduced as a tool for top-down design. The subtasks that are identified in a top-down design can easily become modules, or separate components of a program. If the program is very large or complex, a team of software engineers can be assigned to work on the individual modules and combine them to make a single software application.
+
+### Procedural and Object-Oriented Programming
+Procedural programming involves the programmer constructing procedures (or functions, as they are called in C++). The procedures each contain their own variables and commonly share variables with other procedures.
+
+Object-Oriented Programming (OOP) is centered on the object. An object is a programming element that contains data and the procedures that operate on the data. It is a self-contained unit.
+
+The objects contain, within themselves, both information and the ability to manipulate the information. Operations are carried out on the information in an object by sending the object a *message*.
 
 
