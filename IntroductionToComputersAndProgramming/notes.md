@@ -1,8 +1,8 @@
 # Introduction to Computers and Programming
 ---
 ### Why program?
-<p>A program is a set of instructions that a computer
-follows to perform a task. Commonly referred to as software. Software is essential to a computer because without it, a computer can do nothing.<p>
+A program is a set of instructions that a computer
+follows to perform a task. Commonly referred to as software. Software is essential to a computer because without it, a computer can do nothing.
 
 Listed below are a few of the things that must be designed for any real-world computer programs:
 - the logical flow of the instructions
