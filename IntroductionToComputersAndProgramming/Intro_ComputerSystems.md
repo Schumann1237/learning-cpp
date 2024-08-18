@@ -21,7 +21,7 @@ Hardware refers to the physical components that a computer is made of. A compute
 - input devices
 - output devices
 
-##### Central processing unit (CPU)
+#### Central processing unit (CPU)
 When a computer is performing the tasks that a program tells it to do, we say that the computer is running or executing the program. The CPU is the part of a computer that runs programs. The CPU is the most important component in a computer because without it, the computer could not run software.
 
 Today, CPUs are small chips known as microprocessors. The CPU's job is to fetch instructions, follow the instructions and produce some result. Internally, the central processing unit consists of two parts: **the control unit** and the **arithmetic and logic unit** The control unit coordinates all of the computer's operations and it is responsible for determining where to get the next instruction and regulating the other major components of the computer with control signals. The arithmetic and logic unit, as its name suggests, is designed to perform mathematical operations. 
