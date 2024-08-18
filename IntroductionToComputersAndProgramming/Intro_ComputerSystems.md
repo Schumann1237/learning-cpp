@@ -24,7 +24,7 @@ Hardware refers to the physical components that a computer is made of. A compute
 #### Central processing unit (CPU)
 When a computer is performing the tasks that a program tells it to do, we say that the computer is running or executing the program. The CPU is the part of a computer that runs programs. The CPU is the most important component in a computer because without it, the computer could not run software.
 
-Today, CPUs are small chips known as microprocessors. The CPU's job is to fetch instructions, follow the instructions and produce some result. Internally, the central processing unit consists of two parts: **the control unit** and the **arithmetic and logic unit** The control unit coordinates all of the computer's operations and it is responsible for determining where to get the next instruction and regulating the other major components of the computer with control signals. The arithmetic and logic unit, as its name suggests, is designed to perform mathematical operations. 
+Today, CPUs are small chips known as microprocessors. The CPU's job is to fetch instructions, follow the instructions, and produce some result. Internally, the central processing unit consists of two parts: **the control unit** and the **arithmetic and logic unit** The control unit coordinates all of the computer's operations and it is responsible for determining where to get the next instruction and regulating the other major components of the computer with control signals. The arithmetic and logic unit, as its name suggests, is designed to perform mathematical operations. 
 
 A program is a sequence of instructions stored in the computer's memory. When a computer is running a program, the CPU is engaged in a process known formally as the *fetch/decode/execute cycle*. The steps in the fetch/decode/execute cycle are as follows:
 
@@ -60,17 +60,17 @@ Additionally, floppy disk drives were popular for so many years. A floppy disk r
 Optical devices such as the CD(_compact disc_) and the DVD(_digital versatile disc_) are popular for data storage. Data is not recorded magnetically on an optical disc, but encoded as a series of pits on the disc surface. CD and DVD drives use a laser to detect the pits and thus read encoded data. Optical discs hold large amounts of data, and because recordable CD and DVD drives are now commonplace, they are good mediums for creating backup copies of data.
 
 #### Input Devices
-Input device collects information from the outside world and sends it to the computer. Common devices are the keyboard, mouse and microphone. Disk drives, CD/DVD drives, and USB drives can also be considered input devices because programs and information are retrieved from them and loaded into the computer's memory.
+Input device collects information from the outside world and sends it to the computer. Common devices are the keyboard, mouse, and microphone. Disk drives, CD/DVD drives, and USB drives can also be considered input devices because programs and information are retrieved from them and loaded into the computer's memory.
 
 #### Output Device
-An output device formats and presents any information the computer sends to the outside world. Common devices are monitors, printers, and speakers. Disk drives, USB drives, and CD?DVD recorders can also be considered output devices because the CPU sends them information to be saved.
+An output device formats and presents any information the computer sends to the outside world. Common devices are monitors, printers, and speakers. Disk drives, USB drives, and CD/DVD recorders can also be considered output devices because the CPU sends them information to be saved.
 
 ### Software
 There are two categories of software: system software and application software. 
 
 #### System Software
 
-- *Operating Systems* control the internal operations of the computer's hardware, manage devices connected to the computer, allow data to be saved to and retrieved from storage devices and allow other programs to run on the computer.
+- *Operating Systems* control the internal operations of the computer's hardware, manage devices connected to the computer, allow data to be saved to and retrieved from storage devices, and allow other programs to run on the computer.
 
 - *Utility Programs* perform specialised tasks that enhances the computer's operation or safeguard data. Examples are virus-scanners, file-compression programs, and data-backup programs.
 
