@@ -180,3 +180,39 @@ int main()
 ~~~
 My favourite movie is Wheels of Fury
 ~~~
+
+## Floating-Point Data Types
+Internally, floating-point numbers are stored in a manner similar to scientific notation. Take the number 47,281.97. In scientific notation this number is 4.728197 x 10<sup>4</sup>.
+
+Computers typically use *E notation* to represent floating-point values. in E notation, the number 47,281.97 would be 4.728197E4. 
+
+In C++, there are three data types that can represent floating-point numbers. They are 
+~~~
+float
+double
+long double
+~~~
+|Data Type|Key Word|Description|
+|---|---|---|
+|Single precision|float|4 bytes. Numbers between ±3.4E-38 and ±3.4E38|
+|Double precision|double|8 bytes Numbers between ±1.7E-308 and ±1.7E308|
+|Long double precision|long double|8 bytes. Numbers between ±1.7E-308 and ±1.7E308. Some compilers use 10 bytes for long doubles. This allows a range of ±3.4E-4932 to ±1.1E4832|
+
+## Floating Point Literals
+~~~cpp
+// This program uses floating point data types.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float distance;
+    double mass;
+
+    distance = 1.495979E11F;
+    mass = 1.989E30F;
+    cout << "The Sun is " << distance << " meters away.\n";
+    cout << "The Sun's mass is " << mass << " kilograms.\n";
+    return 0;
+}
+~~~
