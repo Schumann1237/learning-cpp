@@ -63,6 +63,79 @@ The closing brace marks the end of the function.
 |" "|Opening and closing quotation marks|Encloses a string of characters, such as a message that is to be printed on the screen.|
 |;|Semicolon|Marks the end of a complete programming statement.|
 
+## The *cout* object
+*cout* is classified as a *stream object*, which means it works with streams of data. When the << su,bl is used this way, it is called the *stream insertion operator.* 
 
+~~~cpp
+// A simple C++ program
+#include <iostream>
+using namespace std;
 
+int main()
+{
+    cout << "Programming is ";
+    cout << "great fun!";
+    return 0; 
+}
+~~~
+~~~
+Programming is great fun!
+~~~
+~~~cpp
+// An unruly printing program
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout << "The following items were top sellers" << endl;
+    cout << "during the month of June:" << endl;
+    cout << "Computer games" << endl;
+    cout << "Coffee" << endl;
+    cout << "Aspirin" << endl;
+    return 0;
+}
+~~~
+~~~
+The following items were top sellers
+during the month of June:
+Computer games
+Coffee
+Aspirin
+~~~
+Notice how the *<< endl;* statement is used as a *stream manipulator* to advance the output to the beginning of the next line for subsequent printing.
+~~~cpp
+// Yet another well-adjusted printing program
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout << "The following items were top sellers\n";
+    cout << "during the month of June:\n";
+    cout << "Computer games\nCoffee";
+    cout << "\nAspirin\n";
+    return 0;
+}
+~~~
+~~~
+The following items were top sellers
+during the month of June:
+Computer games
+Coffee Aspirin
+~~~
+The *newline escape sequence* is \n. When cout encounters \n in a string, it doesn't print it on the screen, but interprets it as a special command to advance the output cursor to the next line. 
+|Escape sequences|Name|Description|
+|---|---|---|
+|\n|Newline|Causes the cursor to go to the next line for subsequent printing|
+|\t|Horizontal tab|Causes the cursor to skip over to the next tab stop|
+|\a|Alarm|Causes the computer to beep.|
+|\b|Backspace|Causes the cursor to back up, or move left one position|
+|\r|Return|Causes the cursor to go to the beginning of the current line, not the next line|
+| \ | Backslash|Causes a backlash to be printed|
+|'| Single quote|Causes a single quotation mark to be printed.|
+|"|Double quote| Causes a double quotation mark to be printed.|
+
+## The *#include* Directive
+The header file iostream must be included in any program that uses the cout object. This is because cout is not part of the "core" of the C++ language. Specifically, it is part of the *input-output stream library*. 
 
