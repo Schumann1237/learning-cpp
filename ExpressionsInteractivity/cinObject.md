@@ -46,3 +46,10 @@ int main()
     cout << "The area of the rectangle is " << area << endl;
     return 0;
 }
+~~~
+~~~md
+This program calculates the area of a rectangle.
+Enter the length and width of the rectangle separated by a space.
+**10 20 [ENTER]**
+The area of the rectangle is 200
+~~~
