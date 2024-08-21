@@ -216,3 +216,163 @@ int main()
     return 0;
 }
 ~~~
+If you want to force a value to be stored as a *long double*, append an L:
+~~~
+1034.56L
+89.2l
+~~~
+
+## Assigning Floating-Point Values to Integer Variables
+When a floating-point value is assigned to an integer variable, the fractional part of the value (the part after the decimal point) is discarded.
+~~~cpp
+int number;
+number = 7.5; // Assigneds 7 to number
+~~~
+When part of a value is discarded, it is said to be *truncated*.
+
+## The *bool* Data Type
+Bool data type allows you to create small integer variables that are suitable for holding true or false values.
+~~~cpp
+// This program demonstrates boolean variables.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    bool boolValue;
+
+    boolValue = true;
+    cout << boolValue << endl;
+    boolValue = false;
+    cout << boolValue << endl;
+    return 0;
+}
+~~~
+~~~
+1
+0
+~~~
+
+## Determining the Size of a Data Type
+A special operator called *sizeof* will report the number of bytes of memory used by any data type or variable.
+~~~cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    long double apple;
+
+    cout << "The size of an integer is " << sizeof(int);
+    cout << " bytes.\n";
+    cout << "The size of a long integer is " << sizeof(long);
+    cout << "An apple can be eaten in " << sizeof(apple);
+    cout << " bytes!\n";
+    return 0;
+}
+~~~
+~~~
+The size of an integer is 4 bytes.
+The size of a long integer is 4 bytes.
+An apple can be eaten in 8 bytes.
+~~~
+
+## Variable Assignments and Initialisation 
+The = symbol is called the *assignment operator*. Operators perform operations on data. The data that operators work with are called *operands.*
+
+In C++, the operand on the left side must be an *lvalue* and the operand on the right side must be an *rvalue*. The assignment statement takes the r value and puts it in the memory location of the object identified by the lvalue.
+
+You may also assign values to variables as part of the definition. This is called *initialisation*.
+
+### Declaring Variables With the *auto* Key Word
+C++ 11 introduces an alternative way to define variables, using the auto key word and an initialisation value:
+~~~cpp
+auto amount = 100; // integer
+auto interestRate = 12.0; // double
+auto customerNum = 459L; // long
+auto stockCode = 'D' // char
+~~~
+
+## Scope
+~~~cpp
+// This program can't find its variable
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout <<value; // ERROR! value not defined yet!
+
+    int value = 100;
+    return 0;
+}
+~~~
+The program will not work because line 7 attempts to send the contents of the variable value to cout before the variable is defined. The compiler reads your program from top to bottom. To correct the program, the variable definition must be put before any statement that uses it.
+
+## Arithmetic Operators
+
+Generally there are three types of operators: unary, binary, and ternary. these terms reflect the number of operands an operator requires.
+
+Unary operators only require a single operand. Binary operators require two operands. Ternary operators require three operands.
+
+~~~cpp
+// This program calculates hourly wages, including overtime.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double regularWages, basePayRate = 18.25, regularHours = 40.0, overtimeWages, overtimePayRate = 27.78, overtimeHours = 10, total wages;
+    
+    regularWages = basePayRate * regularHours
+    overtimeWages = overtimePayRate * overtimeHours;
+    totalWages = regularWages + overtimeWages;
+
+    cout << "Wages for this week are $" << totalWages << endl;
+    return 0;
+}
+~~~
+~~~
+Wages for this week are 1007.8
+~~~
+
+## Comments
+
+~~~cpp
+// this is single-line comments
+
+/*
+    this is a multi-line comment
+*/
+~~~
+
+## Named Constants 
+~~~cpp
+// This program calculates the circumference of a circle.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    //Constants
+    const double PI = 3.14159;
+    const double DIAMETER = 10.0;
+
+    // Variable to hold the circumference
+    double circumference;
+
+    // calculate the circumference
+    circumference = PI * DIAMETER
+    
+    // Display the circumference
+    cout << "The circumference is: " << circumference << endl;
+    return 0;
+}   
+~~~
+~~~
+The circumference is: 31.4159
+~~~
+
+## Programming Style
+Programming style refers to the way source code is visually arranged. Ideally, it is a consistent method of putting spaces and indentions in a program so visual cues are created.
+
