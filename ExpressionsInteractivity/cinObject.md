@@ -53,4 +53,4 @@ Enter the length and width of the rectangle separated by a space.
 **10 20 [ENTER]**
 The area of the rectangle is 200
 ~~~
-Refer to _**average.cpp**_
+Refer to _**average.cpp**_ 
