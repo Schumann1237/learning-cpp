@@ -47,6 +47,7 @@ int main()
     return 0;
 }
 ~~~
+
 ~~~md
 This program calculates the area of a rectangle.
 Enter the length and width of the rectangle separated by a space.
