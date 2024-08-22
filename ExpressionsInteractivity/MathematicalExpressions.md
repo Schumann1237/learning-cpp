@@ -55,3 +55,15 @@ What is the radius of the circle? **10 [ENTER]**
 The area is 314.159
 ~~~
 Refer to _**average.cpp**_
+
+## When You Mix Apples and Oranges: Type Conversion
+When an operator's operands are of different data types, C++ will automatically convert them to the same data type. This can affect the results of mathematical expressions.
+~~~
+long double
+double
+float 
+unsigned long
+long
+unsigned int
+int
+~~~
