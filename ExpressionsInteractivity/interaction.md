@@ -119,3 +119,26 @@ int main()
 A
 ~~~
 Refer to _**typecast.cpp**_
+
+## Multiple Assignment and Combined Assignment
+C++ allows you to assign a value to multiple variables at once, such as:
+~~~cpp
+a = b = c = d = 12;
+~~~
+The assignment operator works from right to left. 12 is first assigned to d, then to c, then to b, then to a.
+
+### Combined Assignment Operators
+~~~cpp
+number = number + 1;
+~~~
+The expression on the right side of the assignment operator gives the value of number plus 1. Similarly, 
+~~~cpp
+number = number - 5;
+~~~
+gives the value of number minus 5.
+
+These two statements can be compounded with *compounded operators*, for example:
+~~~cpp
+number += 1;
+number -= 5;
+~~~
