@@ -53,3 +53,68 @@ int main()
     return 0;
 }
 ~~~
+
+## Type Casting
+A *type cast expression* lets you manually promote or demote a value. The general format of a type cast expression is 
+~~~
+static_cast<DataType>(Value)
+~~~
+where *Value* is a variable or literal value that you wish to convert and *DataType* is the data type you wish to convert *Value* to. 
+~~~cpp
+double number = 3.7;
+int val;
+val = static_cast<int>(number);
+~~~
+The type cast expression in the third statement returns a copy of the value in number, converted to an *int*.
+
+Type cast expressions are useful in situations where C++ will not perform the desired conversion automatically. 
+
+~~~cpp
+// This program uses a type cast to avoid integer division.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int books;  // Number of books to read
+    int months; // Number of months spent reading
+    double perMonth;    // Average number of books per month
+
+    cout << "How many books do you plan to read? ";
+    cin >> books;
+    cout << "How many months will it take you to read them? ";
+    cin >> months;
+    perMonth = static_cast<double>(books) / months;
+    cout << "That is " << perMonth << " books per month.\n";
+    return 0;
+}
+~~~
+~~~md
+How many books do you plan to read? _**30 [ENTER]**_
+How many months will it take you to read them? _**7 [ENTER]**_
+That is 4.28571 books per month.
+~~~
+
+~~~cpp
+// This program uses a type cast expression to print a character
+// from a number.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int number = 65;
+
+    // Display the value of the number variable.
+    cout << number << endl;
+
+    // Display the value of number converted to
+    // the char data type.
+    cout << static_cast<char>(number) << endl;
+    return 0;
+}
+~~~
+~~~
+65
+A
+~~~
