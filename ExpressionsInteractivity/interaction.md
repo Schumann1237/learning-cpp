@@ -46,9 +46,10 @@ int main()
 {
     float test;
 
-    test = 2.0e38 * 1000 // should overflow test
+    test = 2.0e38 * 1000; // should overflow test
     cout << test << endl;
     test = 2.0e-38 / 2.0e38;
     cout << test << endl;
     return 0;
 }
+~~~
