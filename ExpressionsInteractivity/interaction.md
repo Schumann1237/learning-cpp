@@ -142,3 +142,32 @@ These two statements can be compounded with *compounded operators*, for example:
 number += 1;
 number -= 5;
 ~~~
+
+## Formatting Output
+The way a value is printed is called its *formatting.* The *cout* object has a standard way of formatting variables of each data type. Consider this program:
+~~~cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num1 = 2897, num2 = 5, num3 = 837,
+        num4 = 34, num5 = 7, num6 = 1623,
+        num7 = 390, num8 = 3456, num9 = 12;
+    
+    // Display the first row of numbers
+    cout << num1 << " " << num2 << "" "" << num3 << endl;
+    
+    // Display the second row of numbers
+    cout << num4 << " " << num5 << "" "" << num6 << endl;
+    
+    // Display the third row of numbers
+    cout << num7 << " " << num8 << "" "" << num9 << endl;
+    return 0;
+}
+~~~
+~~~
+2897    5  837
+  34    7 1623
+390  3456   12
+~~~
