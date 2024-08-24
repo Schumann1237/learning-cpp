@@ -156,18 +156,62 @@ int main()
         num7 = 390, num8 = 3456, num9 = 12;
     
     // Display the first row of numbers
-    cout << num1 << " " << num2 << "" "" << num3 << endl;
+    cout << num1 << " " << num2 << " " << num3 << endl;
     
     // Display the second row of numbers
-    cout << num4 << " " << num5 << "" "" << num6 << endl;
+    cout << num4 << " " << num5 << " " << num6 << endl;
     
     // Display the third row of numbers
-    cout << num7 << " " << num8 << "" "" << num9 << endl;
+    cout << num7 << " " << num8 << " " << num9 << endl;
     return 0;
 }
 ~~~
 ~~~
-2897    5  837
-  34    7 1623
-390  3456   12
+2897 5 837
+34 7 1623
+390 3456 12
 ~~~
+
+Unfortunately, the numbers do not line up in columns. This is because some of the numbers, such as 5 and 7, occupy one position, occupy one position on the screen, while others occupy two or three positions *cout* uses just the number of spaces needed to print each number. 
+
+To remedy this, a stream manipulator, *setw*, can be used to establish print fields of a specified width:
+~~~cpp
+    value = 23;
+    cout << setw(5) << value;
+~~~
+The number inside the parentheses after the word *setw* specifies the *field width* for the value immediately following it. The field width is the minimum number of character positions, or spaces, on the screen to print the value in. 
+
+~~~cpp
+#include <iostream>
+#include <iomanip> // Required for setw
+using namespace std;
+
+int main()
+{
+    int num1 = 2897, num2 = 5, num3 = 837,
+        num4 = 34, num5 = 7, num6 = 1623,
+        num7 = 390, num8 = 3456, num9 = 12;
+    
+    // Display the first row of numbers
+    cout << setw(6) << num1 << setw(6)
+         << num2 << setw(6) << num3 << endl;
+
+    // Display the second row of numbers
+    cout << setw(6) << num4 << setw(6)
+         << num5 << setw(6) << num6 << endl;
+
+    // Display the third row of numbers
+    cout << setw(6) << num7 << setw(6)
+         << num8 << setw(6) << num9 << endl;
+    return 0;
+}
+~~~
+~~~
+  2897     5   837
+    34     7  1623
+   390  3456    12
+~~~
+
+### The *setprecision* Manipulator
+The number of significant digits with which floating-point values are displayed can be controlled by using the *setprecision* manipulator. 
+~~~cpp
