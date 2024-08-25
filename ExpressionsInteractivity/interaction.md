@@ -393,3 +393,80 @@ To recap:
 |right|Causes subsequent output to be right justified|
 
 Refer to _**format.cpp**_
+
+## Working with Characters and *string* Objects
+
+When *cin* reads input, it passes over and ignores any leading *whitespace* characters (spaces, tabs, or line breaks). Once it comes to the first non-blank character and starts reading, it stops reading when it gets to the next whitespace character.
+~~~cpp
+// This program illustrates a problem that can occur if cin is used
+// to read character data into a string object
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string name;
+    string city;
+
+    cout << "Please enter your name: ";
+    cin >> name;
+    cout << "Enter the city you live in: ";
+    cin >> city;
+    cout << "Hello, " << name << endl;
+    cout << "You live in ": << city << endl; 
+    return 0;
+}
+~~~
+~~~md
+Please enter your name: _**Kate Smith [ENTER]**_
+Enter the city you live in: Hello, Kate
+You live in Smith
+~~~
+To work around this problem, you can use a C++ function named *getline*. The *getline* function reads an entire line, including leading and embedded spaces, and stores it in a *string* object. 
+~~~cpp
+// This program demonstrates using the getline function
+// to read character data into a string object.
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string name;
+    string city;
+
+    cout << "Please enter your name: ";
+    getline(cin, name);
+    cout << "Enter the city you live in: ";
+    getline(cin, city);
+
+    cout << "Hello, " << name << endl;
+    cout << "You live in " << city << endl;
+    return 0;
+}
+~~~
+~~~md
+Please enter your name: _**Kate Smith [ENTER]**_
+Enter the city you live in: _**Raleigh [ENTER]**_
+Hello, Kate Smith
+You live in Raleigh
+~~~
+
+### Inputting a Character
+~~~cpp
+// This program reads a single character into a char variable.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char ch;
+
+    cout << "Type a character and press Enter: ";
+    cin >> ch;
+    cout << "You entered " << ch << endl;
+    return 0;
+}
+~~~
+
