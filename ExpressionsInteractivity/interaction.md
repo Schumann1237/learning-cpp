@@ -215,3 +215,181 @@ int main()
 ### The *setprecision* Manipulator
 The number of significant digits with which floating-point values are displayed can be controlled by using the *setprecision* manipulator. 
 ~~~cpp
+// This program demonstrates how setprecision rounds a 
+// floating point value
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    double quotient, number1 = 132.364, number2 = 26.91;
+
+    quotient = number1 / number2;
+    cout << quotient << endl;
+    cout << setprecision(5) << quotient << endl;
+    cout << setprecision(4) << quotient << endl;
+    cout << setprecision(3) << quotient << endl;
+    cout << setprecision(2) << quotient << endl;
+    cout << setprecision(1) << quotient << endl;
+    return 0;
+}
+~~~
+~~~
+4.91877
+4.9188
+4.919
+4.92
+4.9
+5
+~~~
+
+~~~cpp
+#inlude <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    double day1, day2, day3, total;
+
+    // Get the sales for each day.
+    cout << "Enter the sales for day 1: ";
+    cin >> day1;
+    cout << "Enter the sales for day 2: ";
+    cin >> day2;
+    cout << "Enter the sales for day 3: ";
+    cin >> day3;
+
+    total = day1 + day2 + day3;
+
+    cout << "\nSales Figures\n";
+    cout << "-------------\n";
+    cout << setprecision(5);
+    cout << "Day 1: " << setw(8); << day1 << endl;
+    cout << "Day 2: " << setw(8); << day2 << endl;
+    cout << "Day 3: " << setw(8); << day3 << endl;
+    cout << "Total: " << setw(8); << total << endl;
+    return 0;
+}
+~~~
+~~~md
+Enter the sales for day 1: _**321.57 [ENTER]**_
+Enter the sales for day 2: _**269.92 [ENTER]**_
+Enter the sales for day 3: _**307.77 [ENTER]**_
+
+Sales Figures
+-------------
+Day 1: 321.57
+Day 2: 269.62
+Day 3: 307.77
+Total: 898.96
+~~~
+
+### The *fixed* Manipulator
+Another stream manipulator, *fixed*, forces cout to print the digits in *fixed-point notation*, or decimal.
+~~~cpp
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    double day1, day2, day3, total;
+
+    // Get the sales for each day
+    cout << "Enter the sales for day 1: ";
+    cin >> day1;
+    cout << "Enter the sales for day 2: ";
+    cin >> day2;
+    cout << "Enter the sales for day 3: ";
+    cin >> day3;
+    
+    total = day1 + day2 + day3;
+
+    cout << "\nSales Figures\n";
+    cout << "-------------\n"
+    cout << setprecision(2) << fixed;
+    cout << "Day 1: " << setw(8) << day1 << endl;
+    cout << "Day 2: " << setw(8) << day2 << endl;
+    cout << "Day 3: " << setw(8) << day3 << endl;
+    cout << "Total: " << setw(8) << total << endl;
+    return 0;
+}
+~~~
+~~~md
+Enter the sales for day 1: _**1321.87**_ [ENTER]
+Enter the sales for day 2: _**1869.26**_ [ENTER]
+Enter the sales for day 3: _**1403.77**_ [ENTER]
+
+Sales Figures
+-------------
+Day 1:  1321.87
+Day 2:  1869.26
+Day 3:  1403.77
+Total:  4594.90
+~~~
+
+### The *showpoint* Manipulator
+By default, floating-point numbers are not displayed with trailing zeroes, and floating-point numbers that do not have a fractional part are not displayed with a decimal point.
+
+~~~cpp
+    double x = 123.4, y = 456.0;
+    cout << setprecision(6) << x << endl;
+    cout << y << endl;
+~~~
+
+The cout statement will produce:
+~~~cpp
+    123.4
+    456
+~~~
+Althought six significant digits are specified are both numbers, neither number is displayed with trailing zeroes. If we want the numbers padded with trailing zeroes, we must use the *showpoint* manipulator as shown:
+~~~cpp
+    double x = 123.4, y = 456.0;
+    cout << setprecision(6) << showpoint << x << endl;
+    cout << y << endl;
+~~~
+The *cout* statements will produce the following output.
+~~~cpp
+    123.400
+    456.000
+~~~
+
+### The *left* and *right* Manipulators
+Normally output is right justified. For example:
+~~~cpp
+    double x = 146.789, y = 24.2, z = 1.783;
+    cout << setw(10) << x << endl;
+    cout << setw(10) << y << endl;
+    cout << setw(10) << z << endl;
+~~~
+~~~cpp
+146.789
+   24.2
+  1.783
+~~~
+Tp cause the values to be left-justified, use the *left* manipulator, as shown in the following:
+~~~cpp
+    double x = 146.789, y = 24.2, z = 1.783;
+    cout << left << setw(10) << x << endl;
+    cout << setw(10) << y << endl;
+    cout << setw(10) << z << endl;
+~~~
+~~~cpp
+146.789   
+24.2      
+1.783 
+~~~
+
+To recap:
+|Stream Manipulator|Description|
+|---|---|
+|setw(n)| Establishes a print field of n spaces|
+|fixed|Displays floating point numbers in fixed point notation|
+|showpoint|Causes a decimal point and trailing zeroes to be displayed, even if there is no fractional part.|
+|setprecision(n)|Sets the precision of floating point numbers.
+|left|Causes subsequent output to be left justified.|
+|right|Causes subsequent output to be right justified|
+
+Refer to _**format.cpp**_
