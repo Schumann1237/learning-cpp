@@ -515,6 +515,74 @@ int main()
     cout << "Enter a number: ";
     cin >> number;
     cout << "Enter a character: "; 
+    ch = cin.get();
     cout << "Thank you!\n";
     return 0;
 }
+~~~
+~~~md
+Enter a number: 100 [ENTER]
+Enter a character : Thank you!
+~~~
+
+### Using *cin.ignore*
+In general form:
+~~~cpp
+cin.ignore(n,c);
+~~~
+The arguments shown in the parentheses are optional. If used, n is an integer and c is a character. They tell cin to skip n number of characters, or until the character c is encountered. For example, the following statement causes cin to skip the next 20 characters or until a newline is encountered, whichever comes first:
+~~~cpp
+cin.ignore(20,'\n')
+~~~
+~~~cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char ch;
+    int number;
+
+    cout << "Enter a number: ";
+    cin >> number;
+    cin.ignore();
+    cout << "Enter a character: ";
+    ch = cin.get();
+    cout << "Thank you!\n";
+    return 0;
+}
+~~~
+
+### *string* Member Functions and Operators
+C++ String objects also have a number of member functions. For example, to know the length of the string that is stored in a *string* object, you can call the object's *length* member function. 
+~~~cpp
+string state = "Texas";
+int size = state.length()   // size = 5
+~~~
+
+Certain operators also work with *string* objects. One of them is the + operator. Because strings cannot be added, when this operator is used with string operads it *concatenates* in a program.
+~~~cpp
+string greeting1 = "Hello ";
+string greeting2;
+string name1 = "World";
+string name2 = "People";
+~~~
+~~~cpp
+greeting2 = greeting1 + name1; // greeting1 now holds "Hello World"
+greeting2 = greeting1 + name2; // greeting1 now holds "Hello People"
+~~~
+
+### More Mathematical Library Functions
+The C++ runtime library provides several functions for performing complex mathematical operations
+
+|Function|Example|Description|
+|---|---|---|
+|abs|y = abs(x);|Returns the absolute value of the argument.|
+|cos|y = cos(x);|Returns the cosine of the argument. The argument should be an angle expressed in radians.
+|exp|y = exp(x);|Computes the exponential function of the argument, which is x. The return type and the argument are doubles.|
+|fmod|y = fmod(x, x);|Returns, as a double, the remainder of the first argument divided by the second argument. Works like the modulus operator, but the arguments are doubles. (The modulus operator only works with integers.)|
+|log|y = log(x);|Returns the natural logarithm of the argument. The return type and the argument are doubles.|
+|log10|y = log10(x);|Returns the base-10 logarithm of the argument. The return type and the argument are doubles.|
+|sin|y = sin(x);|Returns the sine of the argument. The argument should be an angle expressed in radians. The return type and the argument are doubles.|
+|sqrt|y = sqrt(x);|Returns the square root of the argument. The return type and argument are doubles.\
+|tan|y = tan(x);|Returns the tangent of the argument. The argument should be an angle expressed in radians. The return type and the argument are doubles.|
