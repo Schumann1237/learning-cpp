@@ -586,3 +586,5 @@ The C++ runtime library provides several functions for performing complex mathem
 |sin|y = sin(x);|Returns the sine of the argument. The argument should be an angle expressed in radians. The return type and the argument are doubles.|
 |sqrt|y = sqrt(x);|Returns the square root of the argument. The return type and argument are doubles.\
 |tan|y = tan(x);|Returns the tangent of the argument. The argument should be an angle expressed in radians. The return type and the argument are doubles.|
+
+### Random numbers
