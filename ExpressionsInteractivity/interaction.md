@@ -470,3 +470,51 @@ int main()
 }
 ~~~
 
+### Using *cin.get*
+
+Programs that use cin >> to read input will not continue past the cin statement until some character other than the spacebar, tab key, or [ENTER] key has been pressed. 
+
+In situations where necessary, the cin object has a *member function* named *get*.
+~~~cpp
+#include <iostream> 
+using namespace std;
+
+int main()
+{
+    char ch;
+
+    cout << "This program has paused. Press enter to continue.";
+    cin.get(ch);
+    cout << "It has paused a second time. Please press Enter again.">>
+    ch = cin.get();
+    cout << "It has paused a third time. Please press Enter again.";
+    cin.get();
+    cout << "Thank you."
+    return 0;
+}
+~~~
+~~~md
+This program has paused. Press Enter to continue. _**[ENTER]**_
+It has paused a second time. Please press Enter again. _**[ENTER]**_
+It has paused a third time. Please press Enter again. _**[ENTER]**_
+Thank you.
+~~~
+
+### Mixing *cin >>* and *cin.get**
+~~~cpp
+// This program demonstrates a problem that occurs
+// when you mix cin >> with cin.get()
+#include <iostream>
+using namepsace std;
+
+int main()
+{
+    char ch;    // Define an character variable 
+    int number; // Define an integer variable
+
+    cout << "Enter a number: ";
+    cin >> number;
+    cout << "Enter a character: "; 
+    cout << "Thank you!\n";
+    return 0;
+}
