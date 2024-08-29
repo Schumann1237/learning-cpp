@@ -588,3 +588,54 @@ The C++ runtime library provides several functions for performing complex mathem
 |tan|y = tan(x);|Returns the tangent of the argument. The argument should be an angle expressed in radians. The return type and the argument are doubles.|
 
 ### Random numbers
+The C++ library has a function, *rand()*, that you can use to generate random numbers. This requires the cstdlib header file.
+~~~cpp
+y = rand();
+~~~
+After this statement executes, the variable y will contain a random number. In actuality, the numbers produced by rand() are *pseudorandom*. The function uses an algorithm that produces the same sequence of numbers each time the program is repeated on the same system. For example, suppose the following statements are executed.
+~~~cpp
+cout << rand() << endl;
+cout << rand() << endl;
+cout << rand() << endl;
+~~~
+The three numbers displayed will appear to be random, but each time the program runs, the same three values will be generated. In order to randomise the results of rand(), the srand() function must be used. srand() accepts an unsigned int argument, which acts as a seed value for the algorithm. By specifying different seed values, rand() will generate different sequences of random numbers.
+
+A common practice for getting unique seed values is to call the *time* function, which is part of the standard library. The time function returns the number of seconds that have elapsed since midnight, January 1, 1970. The *time* function requires the *ctime* header file, and you pass 0 as an argument to the function.
+~~~cpp
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespsace std;
+
+int main()
+{
+    // Get the system time
+    unsigned seed = time(0);
+
+    // Seed the random number generator
+    srand(seed);
+
+    // Display three random numbers.
+    cout << rand() << endl;
+    cout << rand() << endl;
+    cout << rand() << endl;
+    return 0;
+}
+~~~
+If you wish to limit the range of the random number, use the following formula:
+~~~cpp
+y = (rand() % (maxValue - minValue + 1)) + minValue;
+~~~
+In the formula, *minValue* is the lowest number in the range, and *maxValue* is the highest number in the range. For example, the following code assigns a random number in the range of 1 through 100 to the variable y.
+~~~cpp
+const int MIN_VALUE = 1;
+const int MAX_VALUE = 100;
+y = (rand() % (MAX_VALUE - MINVALUE + 1)) + MIN_VALUE;
+~~~
+As another example, the following code assigns a random number in the range of 100 through 200 to the variable y:
+~~~cpp
+const int MIN_VALUE = 100;
+const int MAX_VALUE = 200;
+y = (rand() % (MAX_VALUE - MINVALUE + 1)) + MIN_VALUE;
+~~~
+Refer to _**dice.cpp**_
