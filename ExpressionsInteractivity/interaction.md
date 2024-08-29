@@ -534,6 +534,7 @@ The arguments shown in the parentheses are optional. If used, n is an integer an
 ~~~cpp
 cin.ignore(20,'\n')
 ~~~
+If no arguments are used, cin will skip only the very next character. An example:
 ~~~cpp
 #include <iostream>
 using namespace std;
