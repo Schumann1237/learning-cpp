@@ -660,4 +660,54 @@ y = pow(x, 0.2);
 *Hand tracing* is a debugging process where you pretend that you are the computer executing the program. You step through each statements one by one and record the contents that each variable will have after the statement executes. 
 
 ## Focus on Problem Solving: A Case Study
+General Crates, Inc. builds custom-designed wooden crates. With materials and labor, it costs GCI $0.23 per cubic foot to build a crate. In turn, they charge their customers $0.50 per cubic foot for the crate. You have been asked to write a program that calculates the volume (in cubic feet), cost, customer price, and profit of any crate GCI builds.
 
+#### Program Design
+The program must perform the following general steps:
+1. Ask the user to enter the dimensions of the crate (length, width, and height). 
+2. Calculate the crate's volume, the cost of the building the crate, the customer's charge, and the profit made.
+3. Display the data calculated.
+
+A general hierarchy is as follows:
+- Calculate crate volume, cost, price, and profit.
+  - Get crate dimensions.
+  - Calculate volume, cost, customer charge, and profit.
+  - display calculated data
+- Get Crate dimensions
+  - Get length
+  - Get width
+  - Get height
+- Calculate volume, cost, cusomer charge, and profit
+  - Calculate the crate's volume
+  - calculate the crate's cost
+  - Calculate the customer charge
+  - Calculate the profit made
+- Display calculated data
+  - Display the crate's volume
+  - Display the crate's cost
+  - Display the customer charge
+  - Display the profit made
+
+#### Pseudocode for the program is as follows:
+~~~
+Ask the user to input the crate's length.
+Ask the user to input the crate's width.
+Ask the user to input the crate's height.
+Calculate the crate's volume.
+Calculate the cost of building the crate.
+Calculate the customer's charge for the crate.
+Calculate the profit made from the crate.
+Display the crate's volume.
+Display the cost of building the crate.
+Display the customer's charge for the crate.
+Display the profit made from the crate.
+~~~
+
+#### Calculations
+~~~
+volume = length x width x height
+cost = volume x 0.23
+charge = volume x 0.5
+profit = charge - cost
+~~~
+Refer to _**CaseStudy.cpp**_
