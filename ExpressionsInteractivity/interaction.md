@@ -640,3 +640,24 @@ const int MAX_VALUE = 200;
 y = (rand() % (MAX_VALUE - MINVALUE + 1)) + MIN_VALUE;
 ~~~
 Refer to _**dice.cpp**_
+
+#### Checkpoint
+1. Assume the variables _angle1_ and _angle2_ hold angles stored in radians. Write a statement that adds the sine of _angle1_ to the cosine of _angle2_ and stores the result in variable _x_.
+~~~cpp
+double x, angle1, angle2;
+
+x = angle1 + cos(angle2);
+~~~
+
+2. Write a statemnt that will find the fifth root of the variable x and store the result in the variable y.
+~~~cpp
+double x, y;
+
+y = pow(x, 0.2);
+~~~
+
+## Focus on Debugging: Hand tracing a program
+*Hand tracing* is a debugging process where you pretend that you are the computer executing the program. You step through each statements one by one and record the contents that each variable will have after the statement executes. 
+
+## Focus on Problem Solving: A Case Study
+
