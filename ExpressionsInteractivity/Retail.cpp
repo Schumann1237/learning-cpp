@@ -19,21 +19,21 @@
 #include <cmath>
 using namespace std;
 
-float Sale, Tax, SaleOnTax, TotalSales;
+float Sale, TaxRate, SalesTax, TotalSales;
 
 int main()
 {
     cout << "How much in sales?" << endl;
     cin >> Sale;
     cout << "How much is tax?" << endl;
-    cin >> Tax;
+    cin >> TaxRate;
     
-    SaleOnTax = Sale * Tax;
-    TotalSales = SaleOnTax + Sale;
+    SalesTax = Sale * TaxRate;
+    TotalSales = SalesTax + Sale;
     cout << fixed << showpoint << setprecision(2);
     cout << "Sales before tax: " << Sale << endl;
-    cout << "Tax percentage: " << Tax*100 << "%" << endl;
-    cout << "Total tax: " << SaleOnTax << endl;
+    cout << "Tax percentage: " << TaxRate * 100 << "%" << endl;
+    cout << "Total tax: " << SalesTax << endl;
     cout << "Sales after tax: " << TotalSales << endl;
     return 0;
 }
