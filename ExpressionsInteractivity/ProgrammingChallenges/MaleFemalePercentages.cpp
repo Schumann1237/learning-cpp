@@ -11,8 +11,7 @@
 #include <cmath>
 using namespace std;
 
-int MaleNumber, FemaleNumber, TotalStudents;
-float MalePercent, FemalePercent;
+float MaleNumber, FemaleNumber, TotalStudents, MalePercent, FemalePercent;
 
 int main()
 {
@@ -23,9 +22,10 @@ int main()
     
     TotalStudents = MaleNumber + FemaleNumber;
     MalePercent = MaleNumber / TotalStudents;
-    FemaleNumber = FemaleNumber / TotalStudents; 
+    FemalePercent = FemaleNumber / TotalStudents; 
 
-    cout << "Percentage of males: " << MalePercent;
-    cout << "Percentage of females: " << FemalePercent;
+    cout << fixed << showpoint << setprecision(2);
+    cout << "Percentage of males: " << MalePercent << "%" << endl;
+    cout << "Percentage of females: " << FemalePercent << "%" << endl;
     return 0;
 }
