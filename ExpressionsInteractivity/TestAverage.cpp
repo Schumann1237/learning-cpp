@@ -25,6 +25,6 @@ int main()
 
     average_score = (EXAM_1 + EXAM_2 + EXAM_3 + EXAM_4 + EXAM_5) / 5;
     cout << fixed << showpoint << setprecision(1);
-    cout << "Average test score is " << average_score;
+    cout << "Average test score is " << average_score << "%";
     return 0;
 }
