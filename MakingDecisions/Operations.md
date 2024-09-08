@@ -221,6 +221,92 @@ Answer the following questions
 with either Y for Yes or N for No.
 Are you employed? _**N [ENTER]**_
 Have you graduated from college in the past two years? _**Y [ENTER]
-Your must be employed to qualify.
+You must be employed to qualify.
 ~~~
 
+## The if/else if Statement
+~~~cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // Constants for grade thresholds
+    const int A_SCORE = 90, B_SCORE = 80, C_SCORE = 70, D_SCORE = 60;
+    
+    int testScore; // To hold a numeric test score
+
+    // Get the numeric test score
+    cout << "Enter your numeric test score and I will\n" 
+         << "tell you the letter grade you earned: ";
+    cin >> testScore;
+
+    // Determine the letter grade
+    if (testScore >= A_SCORE)
+        cout << "Your grade is A.\n";
+    else if (testScore >= B_SCORE)
+        cout << "Your grade is B.\n";
+    else if (testScore >= C_SCORE)
+        cout << "Your grade is C.\n";
+    else if (testScore >= D_SCORE)
+        cout << "Your grade is D.\n";
+    else 
+        cout << "Your grade is F.\n";
+    return 0;
+}
+~~~
+~~~md
+Enter your numeric test score and I will
+tell you the letter grade you earned: _**78 [ENTER]**_
+Your grade is C.
+~~~
+
+## Flags
+A flag is a Boolean or integer variable that signals when a condition exists. Typically a bool variable that signals when some condition exists in the program. When the flag variable is set to false, it indicates that the condition does not exist. When the flag variable is set to true, it means the condition does exist.
+
+For example, suppose a program that calculates sales commisions has a bool variable, defined and initialized as shown here:
+~~~cpp
+bool salesQuoteMet = false;
+~~~
+This flag is to indicate whether a salesperson has met the sales quota. When we define the variable, we initialize it with false because we do not yet know if the salesperson has met the sales quota. Assuming a variable named sales holds the amount of sales, code similar to the following might be used to set the value of the *salesQuotaMet* variable:
+~~~cpp
+if (sales >= QUOTA_AMOUNT)
+    salesQuotaMet = true;
+else
+    salesQuotaMet = false;
+~~~
+Later in the program we might test the flag in the following way:
+~~~cpp
+if (salesQuotaMet)
+    cout << "You have met your sales quota!\n";
+~~~
+Integer variables may also be used as flags.
+~~~cpp
+if (sales >= QUOTA_AMOUNT)
+    salesQuotaMet = 1;
+else
+    salesQuotaMet = 0;
+
+if (salesQuotaMet)
+    cout << ""You have met your sales quota!\n"
+~~~
+
+## Logical Operators
+|Operator|Meaning|
+|---|---|
+|&&|AND|
+|\| \||OR|
+|!|NOT|
+
+### Precedence and Associativity of Logical Operators
+The ! operator has a higher precendence than many of the C++ operators. To avoid an error, you should always enclose its operand in parentheses unless you intend to apply it to a variable or a simple expression with no other operators.
+~~~cpp
+!(x > 2)
+~~~
+If you feel unsure, however, it doesn't hurt to use parentheses anyway.
+
+## Checking Numeric Ranges with Logical Operators
+C++ does not allow you to check numeric ranges with expressions such as 5 < x < 20. Instead, you must use a logical operator to connect two relational expressions, as previously discussed.
+
+## Menus
+You can use nested if/else statements or the if/else if statement to create menu-driven programs. A menu-driven program alows the user to determine the course of action by selecting it from a list of actions.
