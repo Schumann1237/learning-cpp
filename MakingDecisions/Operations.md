@@ -133,3 +133,94 @@ int main()
     }
     return 0;
 }
+~~~
+~~~md
+Enter 3 test scores and I will average them: _**100 100 100 [ENTER]**_
+Your average is 100.0
+Congratulations!
+That's a high score.
+You deserve a pat on the back!
+
+
+Enter 3 test scores and I will average them: _**80 90 70 [ENTER]**_
+Your average is 80.0
+~~~
+
+## The if/else Statement
+The if/else statement will execute one group of statements if the expression is true, or another group of statements if the expression is false. 
+
+~~~cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int number;
+
+    cout << "Enter an integer and I will tell you if it\n";
+    cout << "is odd or even. ";
+    cin >> number;
+    if (number % 2 == 0 )
+        cout << number << " is even.\n";
+    else 
+        cout << number << " is odd.\n";
+    return 0;
+}
+~~~
+~~~md
+Enter an integer and I will tell you if it
+is odd or even. _**17 [ENTER]**_
+17 is odd.
+~~~
+
+## Nested if Statements
+To test more than one condition, an if statement can be nested inside another if statement.
+
+~~~cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char employed, recentGrad;
+
+    // Is the user employed and a recent graduate?
+    cout << "Answer the following questions\n";
+    cout << "with either Y for Yes or ";
+    cout << "N for No.\n";
+    cout << "Are you employed? ";
+    cin >> employed;
+    cout << "Have you graduated from college ";
+    cout << "in the past two years? ";
+    cin >> recentGrad;
+
+    // Determine the user's loan qualifications
+    if (employed == 'Y')
+    {
+        if (recentGrad == 'Y') // Nested if
+        {
+            cout << "You qualify for the special "; 
+            cout << "interest rate.\n";
+        }
+        else // Not a recent grad, but employed
+        {
+            cout << "You must have graduated from ";
+            cout << "college in the past two\n";
+            cout << "years to qualify.\n";
+        }
+    }
+    else \\ Not employed
+    {
+        cout << "You must be employed to qualify.\n";
+    }
+    return 0;
+}
+~~~
+~~~md
+Answer the following questions
+with either Y for Yes or N for No.
+Are you employed? _**N [ENTER]**_
+Have you graduated from college in the past two years? _**Y [ENTER]
+Your must be employed to qualify.
+~~~
+
