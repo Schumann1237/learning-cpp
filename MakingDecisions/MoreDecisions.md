@@ -182,3 +182,273 @@ The charges are $250.00
 ~~~
 
 ## The switch Statement
+The switch statement lets the value of a variable or expression determine where the program will branch.
+
+A branch occurs when one part of a program causes another part to execute. The if/else if statement allows your program to branch into one of several possible paths. It performs a series of tests (usually relational) and branches when one of these tests is true. The switch statement is a similar mechanism, however, it tests the value of an _**integer expression**_ and then uses that value to determine which set of statements to branch to. Here is the format:
+~~~cpp
+switch (IntegerExpression)
+{
+    case ConstantExpression: /* Expression can be a variable
+                                of any integer data
+                                types (including chars) or an
+                                expression whose value 
+                                is of any of the 
+                                integer data types */
+        // place one or more
+        // statements here
+    
+    cause ConstantExpression:
+        // place one or more 
+        // statements here
+    
+    // cause statements may be repeated as many
+    // times as necessary
+
+    default:
+        // place one or more
+        // statements here
+}
+~~~
+The expression following the word **case** must be an integer literal or constant. It cannot be a variable, and it cannot be an expression such as x < 22 or n == 50. An **optional** default section comes after all the case statements. 
+
+~~~cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char choice;
+
+    cout << "Enter A, B, or C: ";
+    cin >> choice;
+    switch (choice)
+    {
+        case 'A':cout << "You entered A.\n";
+                 break;
+        case 'B':cout << "You entered B.\n;"
+                 break;
+        case 'C':cout << "You entered C.\n";
+                 break;
+        default: cout << "You did not enter A, B, or C!\n";
+    }
+    return 0;
+}
+~~~
+~~~md
+Enter A, B, or C: _**B [ENTER]**_
+You entered B.
+~~~
+~~~md
+Enter A, B, or C: _**F [ENTER]**_
+You did not enter A, B, or C!
+~~~
+Without the **break** statement, the program "falls through" all of the statements below the one with the matching **case expression**. Sometimes this is what you want and you can use this flaw as an advantage. 
+
+~~~cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int modelNum; // Model Number
+
+    // Get a model number from the user.
+    cout << "Our TVs come in three models:\n";
+    cout << "The 100, 200, and 300. Which do you want?";
+    cin >> modelNum;
+
+    // Display the model's features.
+    cout << "That model has the following features:\n";
+    switch(modelNum)
+    {
+        case 300: cout << "\tPicture-in-a-picture.\n";
+        case 200: cout << "\tStereo sound.\n";
+        case 100: cout << "\tRemote control.\n";
+                  break;
+        default: cout << "You can only choose the 100,";
+                 cout << "200, or 300.\n";
+    }
+    return 0;
+}
+~~~
+~~~md
+Our TVs come in three models:
+The 100, 200, and 300. Which do you want? _**100 [ENTER]**_
+That model has the following features:
+    Remote control.
+~~~
+~~~md
+Our TVs come in three models:
+The 100, 200, and 300. Which do you want? _**200 [ENTER]**_
+That model has the following features:
+    Stereo sound.
+    Remote control.
+~~~
+Another example of how useful this "fall through" capability can be is when you want the program to branch to the same set of statements for multiple **case** expressions. For instance:
+
+~~~cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char feedGrade;
+
+    // Get the desired grade of feed.
+    cout << "Out pet food is available in three grades:\n";
+    cout << "A, B, and C. Which do you want pricing for? ";
+    cin >> feedGrade;
+
+    // Display the price.
+    switch(feedGrade)
+    {
+        case 'a': 
+        case 'A': cout << "30 cents per round.\n";
+                  break;
+        case 'b': 
+        case 'B': cout << "20 cents per pound.\n";
+                  break;
+        case 'c':
+        case 'C': cout << "15 cents per pound.\n";
+                  breal;
+        default: cout << "That is an invalid choice.\n";
+    }
+    return 0;
+}
+~~~
+~~~md
+Our pet food is available in three grades:
+A, B, and C. Which do you want pricing for? _**b [ENTER]**_
+20 cents per pound.
+~~~
+
+When the user enters 'a' the corresponding case has no statements associated with it, so the program falls through to the next case, which corresponds with 'A'.
+~~~cpp
+case 'a':
+case 'A': cout << "30 cents per pound.\n";
+          break;
+~~~
+
+### Using switch in Menu Systems
+~~~cpp
+// This program uses a switch statement to determine
+// the item selected from a menu.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    int choice; // To hold a menu choice
+    int months; // To hold the number of months
+    double charges; // To hold the monthly charges
+
+    // Constants for membership rates
+    const double ADULT = 40.0,
+                 CHILD = 20.0,
+                 SENIOR = 30.0;
+    
+    const int ADULT_CHOICE = 1,
+              CHILD_CHOICE = 2,
+              SENIOR_CHOICE = 3,
+              QUIT_CHOICE = 4;
+
+    // Display the menu and get a choice.
+    cout << "\t\tHealth Club Membership Menu\n\n"
+         << "1. Standard Adult Membership\n"
+         << "2. Child Membership\n"
+         << "3. Senior Citizen Membership\n"
+         << "4. Quit the Program\n\n"
+         << "Enter your choice: ";
+    cin >> choice;
+
+    // Set the numeric output formatting
+    cout << fixed << showpoint << setprecision(2);
+
+    // Respond to the user's menu selection
+    switch (choice)
+    {
+        case ADULT_CHOICE:
+            cout << "For how many months? ";
+            cin >> months;
+            charges = months * ADULT;
+            cout << "The total charges are $" << charges << endl;
+            break;
+
+        case CHILD_CHOICE;
+            cout << "For many months? ";
+            cin >> months;
+            charges = months * CHILD;
+            cout << "The total charges are $" << charges << endl;
+            break;
+        
+        case SENIOR_CHOICE;
+            cout << "For how many months? ";
+            cin >> months;
+            charges = months * SENIOR;
+            cout << "The total charges are $" << charges << endl;
+        
+        case QUIT_CHOICE;
+            cout << "Program ending.\n";
+            break;
+        
+        default:
+            cout << "The valid choices are 1 through 4. Run the\n"
+                 << "program again and select one of those.\n";
+    }
+    return 0;
+}
+~~~
+~~~txt
+        Health Club Membership Menu
+
+1. Standard Adult Membership
+2. Child Membership
+3. Senior Citizen Membership
+4. Quit the Program
+
+Enter your choice: 2 [ENTER]
+For how many months? 6 [ENTER]
+The total charges are $120.00
+~~~
+
+## More About Blocks and Variable Scope
+The scope of a variable is limited to the block in which it is defined.
+
+It is a common practice to define all of a function's variables at the top of the function. Sometimes, especially in longer programs, it's a good idea to define variables near the part of the program where they are used. This makes the purpose of the variable more evident.
+
+### Variables with the Same Name
+When a block is nested inside another block, a variable defined in the inner block may have the same name as a variable defined in the outer block. As long as the variable in the innter block is visible, however, the variable in the outer block will be hidden. Example:
+~~~cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // Define a variable named number.
+    int number;
+
+    cout << "Enter a number greater than 0: ";
+    cin >> number;
+    if (number > 0)
+    {
+        int number; // Another variable named number.
+        cout << "Now ever another number: ";
+        cin >> number;
+        cout << "The second number you entered was "
+             << number << endl;
+    }
+    cout << "Your first number was " << number << endl;
+    return 0;
+}
+~~~
+~~~txt
+Enter a number greater than 0: 2 [ENTER]
+Now enter another number: 7 [ENTER]
+The second number you entered was 7
+Your first number was 2
+~~~
+
+This program has two separate variables named number. The cin and cout statements in the inner block (belonging to the if statement) can only work with the number variable defined in that block. As soon the program leaves that block, the inner number goes out of scope, revealing the outer number variable.
+
+**WARNING!** Although it's perfectly acceptable to define variables inside nested blocks, you should avoid giving then the same names as variables in the outer blocks. It's too easy to confuse one variable with another.
