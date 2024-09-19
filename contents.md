@@ -11,4 +11,14 @@
    - IntroC++
    - Variables
 
+### Expressions and Interactivity
+   - cinObject
+   - MathematicalExpressions
+   - Interaction
+  
+### Making Decision
+   - Operations
+   - MoreDecisions
+
+
 
