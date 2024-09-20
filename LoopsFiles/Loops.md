@@ -500,3 +500,104 @@ for ( ; ; )
     cout << "Hello world.";
 ~~~
 But this loop will go on forever, as it has no way of terminating.
+
+## Keeping a Running Total
+A *running total* is a sum of numbers that accomadates with each iteration of a loop. The variable used to keep the running total is called an *accumulator*.
+
+Many tasks require you to calculate the total of a series of numbers.
+Programs that calculate the total of a series of numbers typically use two elements
+
+- A loop that reads each number in the series
+- A variable that accumulates the total of the numbers as they are used.
+
+~~~cpp
+// This program takes daily sales figures over a period of time
+// and calculates their total.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    int days; // Number of days
+    double total = 0.0; // Accumulator, initialized with 0
+
+    // Get the number of days
+    cout << "For how many days do you have sales figures? ";
+    cin >> days;
+
+    // Get the sales for each day and accumulate a total.
+    for (int count = 1; count <= days; count ++)
+    {
+        double sales;
+        cout << "Enter the sales for day " << count << ": ";
+        cin >> sales;
+        total += sales; // Accumulate the running total
+    }
+
+    // Display the total sales.
+    cout << fixed, showpoint << setprecision(2);
+    cout << "The total sales are $" << total << endl;
+    return 0;
+}
+~~~
+~~~
+For how many days do you have sales figures? 2 [ENTER]
+Enter the sales for day 1: 230.15 [ENTER]
+Enter the sales for day 2: 145.10 [ENTER]
+The total sales are $375.25 [ENTER]
+~~~
+
+## Sentinels
+A sentinel is a special value that marks the end of a list of values.
+
+It is impractical to require that every item in every list be counted. A technique that can be used in these situations is to ask the user to enter a sentinel at the end of the list. When the user enters the sentinel, the loop terminates.
+
+~~~cpp
+// This program calculates the total number of points a soccer
+// team has earned over a series of games. The user enters
+// a series of point values, then -1 when finished.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int game = 1,  // Game counter
+        points,    // To hold a number of points
+        total = 0; // Accumulator
+
+    cout << "Enter the number of points your team has earned\n";
+    cout << "so far in the season, then enter -1 when finished.\n\n";
+    cout << "Enter the points for game " << game << ": ";
+    cin >> points;
+
+    while (points != -1)
+    {
+        total += points;
+        game++;
+        cout << "Enter the points for game " << game << ": ";
+        cin >> points;
+    }
+    cout << "\nThe total points are " << total << endl;
+    return 0;
+}
+~~~
+~~~
+Enter the number of points your team has earned
+so far in the season, then enter -1 when finished.
+
+Enter the points for game 1: 6 [ENTER]
+Enter the points for game 2: 5 [ENTER]
+Enter the points for game 3: 1 [ENTER]
+Enter the points for game 4: -1 [ENTER]
+
+The total points are 12
+~~~
+The value -1 was chosen for the sentinel in this program because it is not possible for a team to score negative points
+
+## Focus on Software Engineering: Deciding Which Loop to Use
+
+- **The while loop**. The while loop is a conditional loop, which means it repeats as long as a particular condition exists. Also a pretest loop. Ideal in situations where you do not want the loop to iterate if the condition is false from the beginning
+- **The do-while loop**. A conditional loop also. Unlike the while loop, however, it is a posttest loop. It is ideal in situations where you always want the loop to iterate at least once.
+- **The for loop**. A pretest loop that has built-in expressions for initializing, testing, and updating. These expressions make it very convenient to use a counter variable to control the number of iterations that the loop performs. Ideal in situations where the exact number of iterations is known.
+
