@@ -601,3 +601,65 @@ The value -1 was chosen for the sentinel in this program because it is not possi
 - **The do-while loop**. A conditional loop also. Unlike the while loop, however, it is a posttest loop. It is ideal in situations where you always want the loop to iterate at least once.
 - **The for loop**. A pretest loop that has built-in expressions for initializing, testing, and updating. These expressions make it very convenient to use a counter variable to control the number of iterations that the loop performs. Ideal in situations where the exact number of iterations is known.
 
+## Nested Loops
+A nested loop is a loop that is inside another loop.
+
+~~~cpp
+// This program averages test scores. It asks the user for the
+// number of students and the number of test scores per student.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    int numStudents, // Number of students
+        numTests;    // Number of tests per student
+    double total,    // Accumulator for total scores
+           average;  // Average test score
+    
+    // Set up numeric output formatting
+    cout << fixed << showpoint << setprecision(1);
+
+    // Get the number of students
+    cout << "This program averages test scores.\n";
+    cout << "For how many students do you have scores? ";
+    cin >> numStudents;
+
+    // Get the number of test scores per student
+    cout << "How many test scores does each student have? ";
+    cin >> numTests;
+
+    // Determine each student's average score
+    for (int student = 1; student <= numStudents; student++)
+    {
+        total = 0; // Initialize the accumulator
+        for (int test = 1; test <= numTests; test++)
+        {
+            double score;
+            cout << "Enter score " << test << " for ";
+            cout << "student " << student << ": ";
+            cin >> score;
+            total += score;
+        }
+        average = total / numTests;
+        cout << "The average score for student " << student;
+        cout << " is " << average << ".\n\n";
+    }
+    return 0;
+}
+~~~
+~~~
+This program averages test scores.
+For how many students do you have scores? 2 [ENTER]
+How many test scores oes each student have? 3 [ENTER]
+Enter score 1 for student 1: 84 [ENTER]
+Enter score 2 for student 1: 79 [ENTER]
+Enter score 3 for student 1: 97 [ENTER]
+The average score for student 1 is 86.7.
+
+Enter score 1 for student 2: 92 [ENTER]
+Enter score 2 for student 2: 88 [ENTER]
+Enter score 3 for student 2: 94 [ENTER]
+The average score for student 2 is 91.3.
+~~~
