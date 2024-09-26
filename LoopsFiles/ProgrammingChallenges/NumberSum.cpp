@@ -19,5 +19,5 @@ int main()
         sum += value;
     }    
     cout << "The sum of all integers from 1 to " << ENTER_VALUE << " is " << sum  << endl;
-    return 0;
+    return 0
 }
